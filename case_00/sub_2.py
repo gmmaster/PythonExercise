@@ -17,6 +17,10 @@ fit = 0
 for i in range(1, len(arr)):
     if (pro > arr[i]):
         fit += (arr[i] - arr[i - 1]) * (rat[i] / 100)
+#添加利润高于100万时的奖金处理方式       
+        if arr[i] == 100:
+            fit += (pro - arr[i]) * (rat[i+1]/100)
+            break
     else:
         fit += (pro - arr[i - 1]) * (rat[i] / 100)
         break
